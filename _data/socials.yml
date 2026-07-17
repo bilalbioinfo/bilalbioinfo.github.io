@@ -1,6 +1,6 @@
 # this file contains the social media links and usernames of the author
 # the socials will be displayed in the order they are defined here
-cv_pdf: # path to your CV PDF file, e.g. /assets/pdf/cv.pdf (leave blank until you upload one)
+# cv_pdf: /assets/pdf/cv.pdf   # uncomment ONLY after you add a CV PDF (an empty value breaks the build)
 email: bilal@genomevault.net # your email address
 rss_icon: true # comment this line to hide the RSS icon
 scholar_userid: Oox6Xf0AAAAJ # your Google Scholar ID
