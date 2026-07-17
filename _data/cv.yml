@@ -1,0 +1,143 @@
+cv:
+  name: Muhammad Bilal Sharif
+  label: Lead Computational Biologist, GenomeVault · Postdoctoral Researcher, Centre for Palaeogenetics
+  email: bilal@genomevault.net
+  phone: "+46 73 491 5502"
+  location: Stockholm, Sweden
+  image: ""
+  summary: >
+    Computational biologist working in computational biology, palaeogenomics, and population
+    genetics. I develop bioinformatic pipelines to recover and analyse highly degraded ancient
+    DNA from deep-time samples, studying the ecology, population dynamics, and evolutionary
+    history of different species, and I am interested in metagenomic approaches to ancient
+    environments and the integration of multi-omics data to reconstruct past ecosystems.
+
+  social_networks:
+    - network: GitHub
+      username: bilalbioinfo
+    - network: Orcid
+      username: 0000-0002-0581-0542
+    - network: GoogleScholar
+      username: Oox6Xf0AAAAJ
+
+  sections:
+    Education:
+      - institution: University of Vienna
+        location: Vienna, Austria
+        url: https://www.univie.ac.at/
+        area: "Natural Sciences: Molecular Biology"
+        studyType: PhD
+        start_date: 2019
+        end_date: 2024
+        highlights:
+          - "Thesis: Genetic Exploration of Iron Age and Roman Equids, and New Zealand's Feral Horses"
+          - "Supervisors: Elmira Mohandesan, Katrin Schäfer"
+
+      - institution: UniLaSalle Beauvais
+        location: Beauvais, France
+        area: Plant Breeding
+        studyType: MSc
+        start_date: 2016
+        end_date: 2018
+
+      - institution: University of Agriculture, Faisalabad
+        location: Faisalabad, Pakistan
+        area: Plant Breeding and Genetics
+        studyType: BSc
+        start_date: 2011
+        end_date: 2015
+
+    Experience:
+      - company: GenomeVault
+        position: Lead Computational Biologist
+        location: Remote / Stockholm, Sweden
+        start_date: 2026-01-01
+        end_date: present
+        summary: "Leading computational biology work at GenomeVault."
+        highlights:
+          - "[Add responsibilities and highlights for this role.]"
+
+      - company: Centre for Palaeogenetics
+        position: Postdoctoral Researcher (75%)
+        location: Stockholm, Sweden
+        start_date: 2024
+        end_date: present
+        summary: Developing bioinformatic pipelines and conducting population genetic analyses on various species, including Homotherium latidens and mammoths.
+
+      - company: Centre for Palaeogenetics
+        position: System Administrator (25%)
+        location: Stockholm, Sweden
+        start_date: 2024
+        end_date: present
+        summary: Developing and maintaining a web-based SQL database to store and manage sample metadata.
+
+      - company: CIRAD
+        position: Master Thesis
+        location: Montpellier, France
+        start_date: 2018-02
+        end_date: 2018-08
+        summary: "Supervisor: Hana Chaïr."
+
+    Grants and Awards:
+      - title: Stiftelsen Längmanska kulturfonden (SEK 35,000)
+        year: 2025
+      - title: Erasmus Mobility Grant — Ghent University, Belgium
+        year: 2018
+      - title: Erasmus Mobility Grant — AXIA TOHUM A.Ş., Antalya, Turkey
+        year: 2017
+      - title: Master's Scholarship — Institut Polytechnique UniLaSalle, Beauvais, France
+        year: 2016
+
+    Conferences:
+      - title: "Poster — European Society for Evolutionary Biology"
+        year: 2025
+      - title: "Poster — Ancient Biomolecules of Plants, Animals, and Microbes"
+        year: 2021
+      - title: "Poster — evolVienna"
+        year: 2020
+
+    Teaching:
+      - title: Topics in Paleogenomics (2021S) 300184 UE — University of Vienna
+        summary: Lecture on Introduction to Bioinformatics.
+      - title: Practical course on aDNA methods (2023W) 300123-1 UE — University of Vienna
+        summary: Lecture on Introduction to Bioinformatics.
+
+    Skills:
+      - name: Genomics & Data Analysis
+        icon: fa-solid fa-dna
+        keywords: "Palaeogenomics, Population genetics, Metagenomics, NGS data analysis"
+      - name: Programming Languages
+        icon: fa-solid fa-code
+        keywords: "Python, R, Bash, Groovy, C, SQL"
+      - name: Workflows & Tools
+        icon: fa-solid fa-diagram-project
+        keywords: "Nextflow, SLURM, SRA Toolkit"
+      - name: Reproducibility & Version Control
+        icon: fa-solid fa-cubes
+        keywords: "Singularity, Apptainer, Docker, Conda, Mamba, Git"
+      - name: Data Visualization
+        icon: fa-solid fa-chart-line
+        keywords: "Python (matplotlib/seaborn), R (ggplot2)"
+      - name: Web Development
+        icon: fa-solid fa-globe
+        keywords: "WordPress, PHP, HTML"
+
+    Languages:
+      - name: English
+        summary: "Fluent"
+      - name: Urdu
+        summary: "Native"
+      - name: Punjabi
+        summary: "Native"
+
+    References:
+      - name: Prof. Love Dalén
+        icon: fa-solid fa-user
+        reference: >
+          Professor in Evolutionary Genomics, Centre for Palaeogenetics, Stockholm University.
+          Email: love.dalen@zoologi.su.se
+      - name: Dr. Tom van der Valk
+        icon: fa-solid fa-user
+        reference: >
+          Research Group Leader, Department of Bioinformatics and Genetics, Swedish Museum of
+          Natural History. Email: tom.vandervalk@nrm.se

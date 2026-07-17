@@ -1,0 +1,12 @@
+github_users:
+  - bilalbioinfo
+
+repo_description_lines_max: 2
+
+github_repos:
+  - bilalbioinfo/iterative_mapping
+  - NBISweden/DNAharvester
+  - bilalbioinfo/AdaptClean
+  - bilalbioinfo/genomake
+  - bilalbioinfo/dna-capture-probes-design
+  - bilalbioinfo/SNP2NET

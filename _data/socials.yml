@@ -1,0 +1,10 @@
+# this file contains the social media links and usernames of the author
+# the socials will be displayed in the order they are defined here
+cv_pdf: # path to your CV PDF file, e.g. /assets/pdf/cv.pdf (leave blank until you upload one)
+email: bilal@genomevault.net # your email address
+rss_icon: true # comment this line to hide the RSS icon
+scholar_userid: Oox6Xf0AAAAJ # your Google Scholar ID
+orcid_id: 0000-0002-0581-0542 # your ORCID iD
+github_username: bilalbioinfo # your GitHub username
+# linkedin_username: # your LinkedIn username
+# researchgate_profile: # your ResearchGate profile
