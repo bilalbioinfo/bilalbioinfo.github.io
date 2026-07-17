@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://bilalbioinfo.github.io/sitemap.xml
