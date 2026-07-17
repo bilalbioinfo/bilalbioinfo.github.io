@@ -1,7 +1,7 @@
 cv:
   name: Muhammad Bilal Sharif
-  label: Lead Computational Biologist, GenomeVault · Postdoctoral Researcher, Centre for Palaeogenetics
-  email: bilal@genomevault.net
+  label: Postdoctoral Researcher, Centre for Palaeogenetics · Lead Computational Biologist, GenomeVault
+  email: "bilal.sharif@su.se · bilal.bioinfo@gmail.com · bilal@genomevault.net"
   phone: "+46 73 491 5502"
   location: Stockholm, Sweden
   image: ""
@@ -48,15 +48,6 @@ cv:
         end_date: 2015
 
     Experience:
-      - company: GenomeVault
-        position: Lead Computational Biologist
-        location: Remote / Stockholm, Sweden
-        start_date: 2026-01-01
-        end_date: present
-        summary: "Leading computational biology work at GenomeVault."
-        highlights:
-          - "[Add responsibilities and highlights for this role.]"
-
       - company: Centre for Palaeogenetics
         position: Postdoctoral Researcher (75%)
         location: Stockholm, Sweden
@@ -71,6 +62,15 @@ cv:
         end_date: present
         summary: Developing and maintaining a web-based SQL database to store and manage sample metadata.
 
+      - company: GenomeVault
+        position: Lead Computational Biologist
+        location: Remote / Stockholm, Sweden
+        start_date: 2026-01-01
+        end_date: present
+        summary: "Leading computational biology work at GenomeVault."
+        highlights:
+          - "[Add responsibilities and highlights for this role.]"
+
       - company: CIRAD
         position: Master Thesis
         location: Montpellier, France
@@ -79,28 +79,19 @@ cv:
         summary: "Supervisor: Hana Chaïr."
 
     Grants and Awards:
-      - title: Stiftelsen Längmanska kulturfonden (SEK 35,000)
-        year: 2025
-      - title: Erasmus Mobility Grant — Ghent University, Belgium
-        year: 2018
-      - title: Erasmus Mobility Grant — AXIA TOHUM A.Ş., Antalya, Turkey
-        year: 2017
-      - title: Master's Scholarship — Institut Polytechnique UniLaSalle, Beauvais, France
-        year: 2016
+      - bullet: "**2025** — Stiftelsen Längmanska kulturfonden (SEK 35,000)"
+      - bullet: "**2018** — Erasmus Mobility Grant, Ghent University, Belgium"
+      - bullet: "**2017** — Erasmus Mobility Grant, AXIA TOHUM A.Ş., Antalya, Turkey"
+      - bullet: "**2016** — Master's Scholarship, Institut Polytechnique UniLaSalle, Beauvais, France"
 
     Conferences:
-      - title: "Poster — European Society for Evolutionary Biology"
-        year: 2025
-      - title: "Poster — Ancient Biomolecules of Plants, Animals, and Microbes"
-        year: 2021
-      - title: "Poster — evolVienna"
-        year: 2020
+      - bullet: "**2025** — Poster, European Society for Evolutionary Biology"
+      - bullet: "**2021** — Poster, Ancient Biomolecules of Plants, Animals, and Microbes"
+      - bullet: "**2020** — Poster, evolVienna"
 
     Teaching:
-      - title: Topics in Paleogenomics (2021S) 300184 UE — University of Vienna
-        summary: Lecture on Introduction to Bioinformatics.
-      - title: Practical course on aDNA methods (2023W) 300123-1 UE — University of Vienna
-        summary: Lecture on Introduction to Bioinformatics.
+      - bullet: "**2023** — Practical course on aDNA methods (2023W, 300123-1 UE), University of Vienna — Lecture on Introduction to Bioinformatics"
+      - bullet: "**2021** — Topics in Paleogenomics (2021S, 300184 UE), University of Vienna — Lecture on Introduction to Bioinformatics"
 
     Skills:
       - name: Genomics & Data Analysis

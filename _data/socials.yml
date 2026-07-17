@@ -1,7 +1,7 @@
 # this file contains the social media links and usernames of the author
 # the socials will be displayed in the order they are defined here
 # cv_pdf: /assets/pdf/cv.pdf   # uncomment ONLY after you add a CV PDF (an empty value breaks the build)
-email: bilal@genomevault.net # your email address
+email: bilal.sharif@su.se # your email address (the envelope icon)
 rss_icon: true # comment this line to hide the RSS icon
 scholar_userid: Oox6Xf0AAAAJ # your Google Scholar ID
 orcid_id: 0000-0002-0581-0542 # your ORCID iD
