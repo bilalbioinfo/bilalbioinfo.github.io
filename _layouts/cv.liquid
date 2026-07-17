@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<style>
+  /* ---- Date/period badges in Experience & Education ---- */
+  .cv .badge.danger-color-dark {
+    background: var(--global-theme-color) !important; /* fallback for older browsers */
+    background: linear-gradient(135deg, var(--global-theme-color), color-mix(in srgb, var(--global-theme-color) 65%, #111)) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 0.4rem !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+    letter-spacing: 0.02em;
+    padding: 0.32rem 0.55rem !important;
+    display: inline-block;
+    min-width: 78px;
+    text-align: center;
+  }
+
+  /* ---- Download PDF button ---- */
+  .cv-download-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -0.5rem;
+  }
+  .cv-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: var(--global-theme-color);
+    color: #fff;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+  .cv-download-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  /* ---- Print / Save-as-PDF styling ---- */
+  @media print {
+    nav.navbar, footer, #back-to-top, .cv-download-wrap,
+    .contents, d-contents, nav[data-toggle], .no-print { display: none !important; }
+    html, body { background: #fff !important; color: #000 !important; }
+    .cv .badge.danger-color-dark { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .container, .post, main { max-width: 100% !important; width: 100% !important; }
+    a { color: #000 !important; text-decoration: none !important; }
+  }
+</style>
+
+{% assign cv_feature_enabled = site.al_folio.features.cv.enabled | default: true %}
+
+{% if site.plugins contains 'al_folio_cv' and cv_feature_enabled %}
+  <div class="cv-download-wrap">
+    <button class="cv-download-btn" onclick="window.print()" title="Opens the print dialog — choose 'Save as PDF'">
+      <i class="fa-solid fa-file-pdf"></i> Download PDF
+    </button>
+  </div>
+  {% al_folio_cv_render %}
+{% else %}
+  <div class="post">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-description">CV rendering is unavailable.</p>
+    </header>
+    <article>
+      <p>Enable the <code>al_folio_cv</code> plugin and set <code>al_folio.features.cv.enabled: true</code> to render this page.</p>
+    </article>
+  </div>
+{% endif %}
