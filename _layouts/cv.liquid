@@ -3,71 +3,124 @@ layout: default
 ---
 
 <style>
-  /* ---- Date/period badges in Experience & Education ---- */
-  .cv .badge.danger-color-dark {
-    background: var(--global-theme-color) !important; /* fallback for older browsers */
-    background: linear-gradient(135deg, var(--global-theme-color), color-mix(in srgb, var(--global-theme-color) 65%, #111)) !important;
-    color: #fff !important;
-    border: none !important;
-    border-radius: 0.4rem !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
-    letter-spacing: 0.02em;
-    padding: 0.32rem 0.55rem !important;
+  .simple-cv { color: var(--global-text-color); }
+  .simple-cv a { color: var(--global-text-color); text-decoration: underline; }
+  .simple-cv .cv-name { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.15rem; }
+  .simple-cv .cv-label { color: var(--global-text-color); font-size: 1.02rem; margin-bottom: 0.4rem; }
+  .simple-cv .cv-contact { font-size: 0.85rem; opacity: 0.85; margin-bottom: 1.3rem; }
+  .simple-cv .cv-summary { font-size: 0.95rem; margin-bottom: 1.6rem; }
+  .simple-cv h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--global-divider-color, #e6e6e6);
+    padding-bottom: 0.3rem;
+    margin: 1.9rem 0 1rem;
+  }
+  .simple-cv .cv-entry { display: grid; grid-template-columns: 135px 1fr; gap: 1.1rem; margin-bottom: 1.2rem; }
+  .simple-cv .cv-dates {
     display: inline-block;
-    min-width: 78px;
-    text-align: center;
+    color: var(--global-text-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .simple-cv .cv-loc { display: block; margin-top: 0.35rem; font-size: 0.75rem; opacity: 0.75; }
+  .simple-cv .cv-title { font-weight: 700; }
+  .simple-cv .cv-org { font-size: 0.95rem; }
+  .simple-cv .cv-area { font-size: 0.9rem; font-style: italic; opacity: 0.85; }
+  .simple-cv .cv-sum { font-size: 0.9rem; opacity: 0.9; margin-top: 0.15rem; }
+  .simple-cv .cv-entry ul { margin: 0.35rem 0 0 1.1rem; font-size: 0.9rem; }
+  .simple-cv ul.cv-list { margin: 0 0 0 1.1rem; }
+  .simple-cv ul.cv-list li { margin-bottom: 0.4rem; }
+  .simple-cv .cv-kv { margin-bottom: 0.5rem; font-size: 0.92rem; }
+  .simple-cv .cv-kv .cv-k { font-weight: 700; color: var(--global-text-color); }
+  @media (max-width: 576px) {
+    .simple-cv .cv-entry { grid-template-columns: 1fr; gap: 0.3rem; }
+    .simple-cv .cv-loc { display: inline; margin: 0 0 0 0.5rem; }
   }
 
-  /* ---- Download PDF button ---- */
-  .cv-download-wrap {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: -0.5rem;
-  }
+  /* Download-PDF button (rendered in the left index column via the base layout) */
   .cv-download-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    background: var(--global-theme-color);
-    color: #fff;
-    border: none;
-    border-radius: 0.4rem;
-    padding: 0.45rem 0.9rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: opacity 0.15s ease, transform 0.15s ease;
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+    width: 100%;
+    background: #333; color: #fff; border: none;
+    border-radius: 0.4rem; padding: 0.5rem 0.8rem;
+    font-size: 0.82rem; font-weight: 600; cursor: pointer; margin-bottom: 1rem;
   }
-  .cv-download-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+  .cv-download-btn:hover { opacity: 0.9; }
 
-  /* ---- Print / Save-as-PDF styling ---- */
+  /* Print / Save-as-PDF: main text only, no index/nav/footer */
   @media print {
-    nav.navbar, footer, #back-to-top, .cv-download-wrap,
-    .contents, d-contents, nav[data-toggle], .no-print { display: none !important; }
+    nav, header, footer, #back-to-top, .cv-download-btn, .no-print { display: none !important; }
+    .col-sm-3 { display: none !important; }
+    .col-sm-9 { max-width: 100% !important; flex: 0 0 100% !important; }
     html, body { background: #fff !important; color: #000 !important; }
-    .cv .badge.danger-color-dark { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .container, .post, main { max-width: 100% !important; width: 100% !important; }
+    .simple-cv .cv-dates { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     a { color: #000 !important; text-decoration: none !important; }
   }
 </style>
 
-{% assign cv_feature_enabled = site.al_folio.features.cv.enabled | default: true %}
+{% assign cv = site.data.cv.cv %}
+<div class="simple-cv">
+  <h1 class="cv-name">{{ cv.name }}</h1>
+  {% if cv.label %}<div class="cv-label">{{ cv.label }}</div>{% endif %}
+  <div class="cv-contact">
+    {% if cv.email %}{{ cv.email }}{% endif %}{% if cv.phone %} · {{ cv.phone }}{% endif %}{% if cv.location %} · {{ cv.location }}{% endif %}
+  </div>
+  {% if cv.summary %}<p class="cv-summary">{{ cv.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>{% endif %}
 
-{% if site.plugins contains 'al_folio_cv' and cv_feature_enabled %}
-  <div class="cv-download-wrap">
-    <button class="cv-download-btn" onclick="window.print()" title="Opens the print dialog — choose 'Save as PDF'">
-      <i class="fa-solid fa-file-pdf"></i> Download PDF
-    </button>
-  </div>
-  {% al_folio_cv_render %}
-{% else %}
-  <div class="post">
-    <header class="post-header">
-      <h1 class="post-title">{{ page.title }}</h1>
-      <p class="post-description">CV rendering is unavailable.</p>
-    </header>
-    <article>
-      <p>Enable the <code>al_folio_cv</code> plugin and set <code>al_folio.features.cv.enabled: true</code> to render this page.</p>
-    </article>
-  </div>
-{% endif %}
+  {% for pair in cv.sections %}
+    {% assign secname = pair[0] %}
+    {% assign items = pair[1] %}
+    {% assign firstitem = items | first %}
+    <h2>{{ secname }}</h2>
+
+    {% if firstitem.bullet %}
+      <ul class="cv-list">
+        {% for entry in items %}
+          <li>{{ entry.bullet | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      {% for entry in items %}
+        {% if entry.institution or entry.company or entry.position %}
+          <div class="cv-entry">
+            <div class="cv-when">
+              {% assign sd = entry.start_date | append: '' | split: '-' | first %}
+              {% assign ed = entry.end_date | append: '' | split: '-' | first %}
+              {% if sd and sd != '' %}
+                <span class="cv-dates">{{ sd }}{% if ed and ed != '' %} – {{ ed }}{% endif %}</span>
+              {% endif %}
+              {% if entry.location %}<span class="cv-loc">{{ entry.location }}</span>{% endif %}
+            </div>
+            <div class="cv-what">
+              {% assign etitle = entry.position | default: entry.studyType | default: entry.degree %}
+              {% if etitle %}
+                {% if entry.url %}
+                  <div class="cv-title"><a href="{{ entry.url }}">{{ etitle }}</a></div>
+                {% else %}
+                  <div class="cv-title">{{ etitle }}</div>
+                {% endif %}
+              {% endif %}
+              {% assign eorg = entry.company | default: entry.institution %}
+              {% if eorg %}<div class="cv-org">{{ eorg }}</div>{% endif %}
+              {% if entry.area %}<div class="cv-area">{{ entry.area }}</div>{% endif %}
+              {% if entry.summary %}<div class="cv-sum">{{ entry.summary | markdownify | remove: '<p>' | remove: '</p>' }}</div>{% endif %}
+              {% if entry.highlights %}
+                <ul>
+                  {% for h in entry.highlights %}<li>{{ h | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          </div>
+        {% elsif entry.keywords %}
+          <div class="cv-kv"><span class="cv-k">{{ entry.name }}:</span> {{ entry.keywords }}</div>
+        {% elsif entry.reference %}
+          <div class="cv-kv"><span class="cv-k">{{ entry.name }}</span> — {{ entry.reference }}</div>
+        {% elsif entry.name %}
+          <div class="cv-kv"><span class="cv-k">{{ entry.name }}:</span> {{ entry.summary }}</div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+</div>

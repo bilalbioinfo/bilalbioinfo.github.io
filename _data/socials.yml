@@ -1,10 +1,11 @@
-# this file contains the social media links and usernames of the author
-# the socials will be displayed in the order they are defined here
-# cv_pdf: /assets/pdf/cv.pdf   # uncomment ONLY after you add a CV PDF (an empty value breaks the build)
-email: bilal.sharif@su.se # your email address (the envelope icon)
-rss_icon: true # comment this line to hide the RSS icon
-scholar_userid: Oox6Xf0AAAAJ # your Google Scholar ID
-orcid_id: 0000-0002-0581-0542 # your ORCID iD
-github_username: bilalbioinfo # your GitHub username
-# linkedin_username: # your LinkedIn username
-# researchgate_profile: # your ResearchGate profile
+# Social/academic links shown as icons. Order here = display order.
+github_username: bilalbioinfo
+linkedin_username: bilal-sharif-6130182ab
+scholar_userid: Oox6Xf0AAAAJ # Google Scholar
+orcid_id: 0000-0002-0581-0542 # ORCID
+# --- other options you can add (uncomment and fill in) ---
+# research_gate_profile: your-researchgate-profile
+# semanticscholar_id: your-semantic-scholar-id
+# x_username: your-x-handle
+# bluesky_url: https://bsky.app/profile/you
+# mastodon_username: your@instance

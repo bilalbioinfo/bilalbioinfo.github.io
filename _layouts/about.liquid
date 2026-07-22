@@ -1,0 +1,98 @@
+---
+layout: default
+---
+<style>
+  /* Photo floats top-right; title/subtitle and body text flow up beside it */
+  .home-photo-float {
+    float: right;
+    width: 280px;
+    max-width: 42%;
+    margin: 0 0 1rem 1.8rem;
+  }
+  .home-photo-float img { width: 100%; height: auto; }
+  .post-header .post-title { font-size: 3.25rem; line-height: 1.1; margin-bottom: 0.4rem; }
+  .post-header .desc { font-size: 1.15rem; line-height: 1.6; }
+  .home-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.5rem 0 1.5rem;
+    font-size: 0.95rem;
+  }
+  .home-location { opacity: 0.85; }
+  .home-location i { margin-right: 0.35rem; color: var(--global-theme-color); }
+  .home-icons a { margin-right: 0.7rem; font-size: 1.2rem; }
+  .home-reach { font-size: 0.95rem; margin: 0 0 1.5rem; opacity: 0.9; }
+  @media (max-width: 600px) {
+    .home-photo-float { float: none; display: block; width: 55%; max-width: 220px; margin: 0 0 1rem 0; }
+    .post-header .post-title { font-size: 2.4rem; }
+  }
+</style>
+
+<div class="post">
+  {% if page.profile and page.profile.image %}
+    <div class="home-photo-float">
+      {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+      {% if page.profile.image_circular %}
+        {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+      {% else %}
+        {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+      {% endif %}
+      {% capture sizes %}280px{% endcapture %}
+      {%
+        include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+        cache_bust=false
+      %}
+    </div>
+  {% endif %}
+
+  <header class="post-header">
+    <h1 class="post-title">
+      {% if site.title == 'blank' %}
+        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+        {{ site.last_name }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </h1>
+    <p class="desc">{{ page.subtitle }}</p>
+  </header>
+
+  {% if page.social %}
+    <div class="home-meta">
+      <span class="home-location"><i class="fa-solid fa-location-dot"></i>Based in Stockholm, Sweden</span>
+      <span class="home-icons contact-icons">{% social_links %}</span>
+    </div>
+  {% endif %}
+
+  <p class="home-reach">The best way to reach me is by email at <a href="mailto:bilal.bioinfo@gmail.com">bilal.bioinfo@gmail.com</a>. For postdoctoral research, write to <a href="mailto:bilal.sharif@su.se">bilal.sharif@su.se</a>; for GenomeVault matters, <a href="mailto:bilal@genomevault.net">bilal@genomevault.net</a>.</p>
+
+  <article>
+    <div class="clearfix">{{ content }}</div>
+
+    <!-- News -->
+    {% if page.announcements and page.announcements.enabled %}
+      <h2>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+      </h2>
+      {% include news.liquid limit=true %}
+    {% endif %}
+
+    <!-- Latest posts -->
+    {% if page.latest_posts and page.latest_posts.enabled %}
+      <h2>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+      </h2>
+      {% include latest_posts.liquid %}
+    {% endif %}
+
+    <!-- Selected papers -->
+    {% if page.selected_papers %}
+      <h2>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+      </h2>
+      {% include selected_papers.liquid %}
+    {% endif %}
+  </article>
+</div>

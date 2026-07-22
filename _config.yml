@@ -3,8 +3,7 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: Muhammad
-middle_name: Bilal
+first_name: Bilal
 last_name: Sharif
 contact_note: >
   The best way to reach me is by email.
@@ -90,7 +89,7 @@ posts_in_search: true
 bib_search: true
 
 # Dimensions
-max_width: 930px
+max_width: 1000px
 
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
@@ -215,7 +214,6 @@ exclude:
   - lighthouse_results/
   - package.json
   - package-lock.json
-  - _pages/about_einstein.md
   - purgecss.config.js
   - README.md
   - readme_preview/
@@ -322,8 +320,8 @@ display_categories: ["general"] # these categories will be displayed on the fron
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Sharif]
+  first_name: [Muhammad Bilal, M. B., Bilal, Muhammad B.]
 
   style: apa
   locale: en
