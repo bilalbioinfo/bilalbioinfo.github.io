@@ -21,6 +21,18 @@
       <meta http-equiv="refresh" content="3; url={{ redirect }}">
     {% endif %}
     {% include head.liquid %}
+
+    <!-- ===== ACCENT COLOR (light theme) ===================================
+         Change the hex value below to experiment with the site accent color
+         used for links, the home "boxes", and highlights. Default blue is the
+         dark-theme cyan (#2698ba). Examples: #0076df (blue), #00ab37 (green),
+         #b509ac (original purple). Dark mode keeps its own color. ============ -->
+    <style>
+      :root {
+        --global-theme-color: #2698ba;
+        --global-hover-color: #2698ba;
+      }
+    </style>
   </head>
 
   <!-- Body -->

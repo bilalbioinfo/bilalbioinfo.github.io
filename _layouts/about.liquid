@@ -24,6 +24,7 @@ layout: default
   .home-location i { margin-right: 0.35rem; color: var(--global-theme-color); }
   .home-icons a { margin-right: 0.7rem; font-size: 1.2rem; }
   .home-reach { font-size: 0.95rem; margin: 0 0 1.5rem; opacity: 0.9; }
+  .post article p { text-align: justify; }
   @media (max-width: 600px) {
     .home-photo-float { float: none; display: block; width: 55%; max-width: 220px; margin: 0 0 1rem 0; }
     .post-header .post-title { font-size: 2.4rem; }
@@ -31,22 +32,6 @@ layout: default
 </style>
 
 <div class="post">
-  {% if page.profile and page.profile.image %}
-    <div class="home-photo-float">
-      {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-      {% if page.profile.image_circular %}
-        {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-      {% else %}
-        {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-      {% endif %}
-      {% capture sizes %}280px{% endcapture %}
-      {%
-        include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-        cache_bust=false
-      %}
-    </div>
-  {% endif %}
-
   <header class="post-header">
     <h1 class="post-title">
       {% if site.title == 'blank' %}
@@ -56,6 +41,21 @@ layout: default
         {{ site.title }}
       {% endif %}
     </h1>
+    {% if page.profile and page.profile.image %}
+      <div class="home-photo-float">
+        {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+        {% if page.profile.image_circular %}
+          {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+        {% else %}
+          {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+        {% endif %}
+        {% capture sizes %}280px{% endcapture %}
+        {%
+          include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+          cache_bust=false
+        %}
+      </div>
+    {% endif %}
     <p class="desc">{{ page.subtitle }}</p>
   </header>
 

@@ -65,7 +65,7 @@ nav_order: 3
 
   <a class="repo-card" href="https://github.com/NBISweden/DNAharvester">
     <div class="repo-name"><i class="fa-brands fa-github"></i>NBISweden/DNAharvester</div>
-    <div class="repo-desc">A Nextflow pipeline for analysing highly degraded DNA from ancient and historical specimens — competitive/adaptive mapping, reference-bias evaluation, and subworkflows for mitogenome assembly, taxonomy, sex determination, and variant calling.</div>
+    <div class="repo-desc">A Nextflow pipeline for analysing highly degraded DNA from ancient and historical specimens, with competitive and adaptive mapping, reference-bias evaluation, and subworkflows for mitogenome assembly, taxonomy, sex determination, and variant calling.</div>
     <span class="repo-lang">Nextflow</span>
   </a>
 
