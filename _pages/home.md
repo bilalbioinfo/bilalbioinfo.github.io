@@ -4,7 +4,7 @@ title: home
 permalink: /
 subtitle: >
   Postdoctoral Researcher, Centre for Palaeogenetics, <a href='https://www.su.se/'>Stockholm University</a><br>
-  Lead Computational Biologist, GenomeVault
+  Lead Computational Biologist, <a href='https://www.genomevault.net/'>GenomeVault</a><br>
 
 profile:
   align: right
